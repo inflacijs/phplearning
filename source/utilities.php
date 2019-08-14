@@ -5,7 +5,7 @@ require_once("../config/config.php");
 function printTable($result, $classesCSS) {
     $items=$result->fetch_all();
     $columns=$result->fetch_fields();
-    $currentDateTime = date('Y-m-d H:i:s');
+    $currentDateTime = date('Y-m-d ');
     echo "<div class='container'>";
     
     echo "<div class='header'>
@@ -22,10 +22,9 @@ function printTable($result, $classesCSS) {
         echo "<li class='item'>
         
             <span class='text'>$item[1]</span>
-            <a href='mark.php?as=done&item=".$item[0]."' class='done-button'>
-            <input type='checkbox' id='c".$item[0]."' name='c".$item[0]."' value='Apple'>
-            <label for='c".$item[0]."'></label>
-            </a>
+            <div class='a-container'>
+            <a href='mark.php?as=done&item=".$item[0]."' id='a-check'><input id='c".$item[0]."' type='checkbox' class='check'><label for='c".$item[0]."'></label></a>
+            </div>
             <a href=''>
             <i class='fa fa-trash-o de' job='delete' id='0' value=".$item[0]." name='uid'>
             </i>
@@ -33,12 +32,14 @@ function printTable($result, $classesCSS) {
               </li>";
        
     }
-    
-    
     echo "</ul>";
 else:
     echo "<p>To do list is empty / day off of to does!</p>";
-endif;   
+endif; 
+echo "<form class='add-item' action='add.php' method='POST'>
+        <input name='task' class='inputTask' placeholder='type your todo' required>
+        <button type='submit'  value='add' class='submit'>ADD</button>
+    </form>" ;
     echo "</div>";
 }
 

@@ -213,6 +213,32 @@ input[type=checkbox] + label {
     border-color: #bfb;
   }
 
+  label {
+      width: 30px !important;
+      display:inline;
+  }
+  .done-button {
+      display: block;
+      width: 30px;
+      height: 30px;
+      
+  }
+
+.inputTask {
+    width: 380px;
+    height:40px;
+    font-size: 20px;
+}
+.submit {
+    display: block;
+    width: 384px;
+    height:40px;
+    font-size: 30px;
+    opacity: 0.5;
+}
+#date {
+    opacity: 0.7;
+}
 
 
 
