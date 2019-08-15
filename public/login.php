@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PHP Static HTML</title>
+    <link rel="stylesheet" href="styles/font-awesome.css">
+    <link rel="stylesheet" href="styles/style.login.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
 <?php
     session_start();
     require_once("../source/utilities.php");
@@ -52,12 +69,17 @@
           
     }
 ?>
+<div class="log-form">
+<h2>Login to your accont</h2>
 
 <form method="POST" action="login.php">
-<label for="uname">Login</label>   
-<input name = "uname">
-    <label for="pw">Password</label>
-    <input name="pw">
-   <button type="submit" name="login">LOGIN</button>
-   <button type="submit" name="logout" >LOGOUT</button>
+   
+<input type="text" name="uname" title="username" placeholder="username">
+    
+<input type="password" name="pw" class="btn" title="username" placeholder="password">
+<button type="submit" id="button2"  name="login">LOGIN</button>
+<a class="forgot" href="register.php">Register your accont</a>
 </form>
+</div>
+<?php
+require_once("../source/foot.php");

@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PHP Static HTML</title>
+    <link rel="stylesheet" href="styles/font-awesome.css">
+    <link rel="stylesheet" href="styles/style3.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
 <?php
     session_start();
     require_once("../source/utilities.php");
@@ -26,15 +42,21 @@
         // set parameters and execute
         $stmt->execute();
         $conn->close();
-        header("Location: register.php");
+        echo 
+        header("Location: login.php");
     }
 ?>
+<div class="log-form">
+    <h2>Register</h2>
     <form action="register.php" method="POST">
-        <div>UserName<input name="uname" required placeholder="Enter User Name"></div>
-        <div>Password<input name="pw" type="password" required></div>
-        <div>Password(repeat)<input name="pw2" required></div>
-        <div>Last Name (optional)<input name="lastname" placeholder=""></div>
-        <div>E-mail<input name="email" type="email" ></div>
+        <div class="reg-div">UserName<input name="uname" required ></div>
+        <div class="reg-div">Password<input name="pw" type="password" required></div>
+        <div class="reg-div">Password(repeat)<input type="password" name="pw2" required></div>
+        <div class="reg-div">Last Name (optional)<input name="lastname" placeholder=""></div>
+        <div class="reg-div">E-mail<input name="email" type="email" ></div>
 
         <button type="submit">SUBMIT</button>
     </form> 
+</div>
+<?php
+    require_once("../source/foot.php");

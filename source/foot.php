@@ -1,3 +1,3 @@
-<footer>(C)2019</footer>
+<footer class="footer">(C)2019</footer>
 </body>
 </html>
