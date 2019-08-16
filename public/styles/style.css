@@ -252,7 +252,23 @@ input, button, a {
     background-color: rgb(202, 202, 199);
     color: rgb(107, 99, 99);
     text-align: center;
-    padding: 5px;
+    padding: 5px;}
+
+    li input {
+         display:inline;
+         margin-left: 10px;
+         margin-top: 4px;
+         font-size: 21px;
+         font-family: 'Titillium Web';
+         border: 0px;
+    }
+    li input:focus {
+        outline:none;
+    }
+
+    .a-container {
+        display: flex;
+    }
     
 
 

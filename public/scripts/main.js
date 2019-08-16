@@ -35,9 +35,4 @@ $("input").click(function (event) {
 
 
    
-    // $logout = document.querySelector('.logout');
-    // console.log($logout);
-    // function onLogin(){
-    //     console.log("botton is presed");
-    //       window.location.href="http://google.com";
-    //     };
+   

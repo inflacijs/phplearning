@@ -29,7 +29,7 @@
         $lastname = "";
         if(isset($_POST["lastname"])) $lastname = $_POST["lastname"];
         $email = "";
-        if(isset($_POST["email"])) $lastname = $_POST["email"];
+        if(isset($_POST["email"])) $email = $_POST["email"];
         $pwhash = "BadHash";
         if ($_POST["pw"] == $_POST["pw2"] ) {
             $pwhash = password_hash($_POST["pw"], PASSWORD_DEFAULT);

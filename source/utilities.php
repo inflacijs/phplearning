@@ -21,9 +21,13 @@ function printTable($result, $classesCSS) {
         // var_dump($item[0]);
         echo "<li class='item'>
         
-            <span class='text'>$item[1]</span>
+            
             <div class='a-container'>
             <a href='mark.php?as=done&item=".$item[0]."' id='a-check'><input id='c".$item[0]."' type='checkbox' class='check'><label for='c".$item[0]."'></label></a>
+            <form method='POST' action='update.php'>
+            <input name='content'value='".$item[1]."' spellcheck='false';></input>
+            <input type='hidden' name='id' value='".$item[0]."'>
+            </form>
             </div>
             <a href=''>
             <i class='fa fa-trash-o de' job='delete' id='0' value=".$item[0]." name='uid'>
