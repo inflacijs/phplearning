@@ -26,8 +26,7 @@
             exit;
         }
         $username = $_POST["uname"] ;
-        $lastname = "";
-        if(isset($_POST["lastname"])) $lastname = $_POST["lastname"];
+       
         $email = "";
         if(isset($_POST["email"])) $email = $_POST["email"];
         $pwhash = "BadHash";
@@ -37,8 +36,8 @@
             header("Location: register.php");
         }
         
-        $stmt = $conn->prepare("INSERT INTO users (username, lastname, email, pwhash) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $username, $lastname, $email, $pwhash); // "sss" means the values are 3 strings (another type is "d" or "f")
+        $stmt = $conn->prepare("INSERT INTO users (username, email, pwhash) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $email, $pwhash); // "sss" means the values are 3 strings (another type is "d" or "f")
         // set parameters and execute
         $stmt->execute();
         $conn->close();
@@ -52,7 +51,6 @@
         <div class="reg-div">UserName<input name="uname" required ></div>
         <div class="reg-div">Password<input name="pw" type="password" required></div>
         <div class="reg-div">Password(repeat)<input type="password" name="pw2" required></div>
-        <div class="reg-div">Last Name (optional)<input name="lastname" placeholder=""></div>
         <div class="reg-div">E-mail<input name="email" type="email" ></div>
 
         <button type="submit">SUBMIT</button>

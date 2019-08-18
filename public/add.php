@@ -42,19 +42,17 @@ session_start();
         $stmt->bind_param("sd", $mytask, $_SESSION['id']);
         $stmt->execute();
         $conn->close();
-        //I reload the page (normal get) since NO BODY has been sent
         header("Location: add.php");
     }
 
     require_once("../source/head.php");
     if (isset($_SESSION['username'])) {
-        echo "Hello".$_SESSION['username']."<br>";
-        echo "Your ID".$_SESSION['id']."<br>";
+        echo "<div class='hello'>Hello ".$_SESSION['username']."</div><br>";
+        // echo "Your ID".$_SESSION['id']."<br>";
     }
     if (isset($_SESSION["id"])) {
         $qry = "SELECT * FROM todo WHERE uid = ".$_SESSION["id"].";"; 
     } else {
-        //maybe you dont want to show anything when not logged in
         $qry = "SELECT *FROM todo"; 
     }
    

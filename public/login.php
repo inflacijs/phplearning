@@ -19,7 +19,7 @@
     session_start();
     require_once("../source/utilities.php");
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // $_SESSION['uname'] = $_POST['uname'];
+        
         if (isset($_POST['logout'])) {
             unset($_SESSION['id']);
             unset($_SESSION['username']);
@@ -36,7 +36,7 @@
             echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
             exit;
         }
-        //TODO field validation from https://www.php.net/book.filter
+        
         if (!isset($_POST["uname"])) header("Location: login.php");
         $username = $_POST["uname"];
         $pw = $_POST['pw'];
@@ -51,10 +51,6 @@
             echo "Bad Login";
         }
         $row = $res->fetch_assoc();
-        // var_dump($row);
-        // echo $row['username'];
-        // echo $row['id'];
-        // echo $row['pwhash'];
         if (password_verify ($pw , $row['pwhash'])) {
             echo "Logged in";
             $_SESSION['id'] = $row['id'];
@@ -65,7 +61,6 @@
             header("Location: login.php"); 
         }
        
-        // $_SESSION['uname'] = $_POST['uname'];
           
     }
 ?>
